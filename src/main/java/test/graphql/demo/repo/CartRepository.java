@@ -6,7 +6,5 @@ import test.graphql.demo.model.Cart;
 
 @Repository
 public interface CartRepository extends CrudRepository<Cart, Long> {
-    @Override
-    Cart findOne(Long aLong);
 
 }
