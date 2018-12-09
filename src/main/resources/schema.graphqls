@@ -1,0 +1,31 @@
+schema {
+    query: EntryPoint
+
+}
+
+type EntryPoint{
+  cart(id: Long): Cart
+
+}
+
+type Product {
+    id: ID!
+    title: String!
+    price: BigDecimal!
+    description: String
+    sku: String!
+    images(limit: Int = 0): [String!]!
+}
+
+
+type Cart {
+    id: ID!
+    items: [Item!]!
+    subTotal: Float!
+}
+
+type Item {
+    quantity: Int!
+    product: Product!
+    total: BigDecimal!
+}
